@@ -1,6 +1,6 @@
 # Current architecture
 
-A living snapshot of how this project is actually built, as of 2026-10-22. See `docs/claude.md` for working conventions; this file is the "what exists and why" reference.
+A living snapshot of how this project is actually built, as of 2026-10-22. See `docs/claude.md` for working conventions and `docs/architectures-experimented.md` for the fuller history of every modeling approach tried (including trained-but-unused and considered-but-never-built ones); this file is the "what exists and why" reference for what's actually wired into the live app today.
 
 ## What this is
 

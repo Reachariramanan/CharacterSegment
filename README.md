@@ -47,10 +47,10 @@ model/      custom PyTorch models, training scripts, dataset classes,
 data/       rendered page images + saved annotations (+ version history)
 scripts/    one-off CLIs (render pages, run CV-assist standalone, etc.)
 tests/      a handful of pytest model-size/shape checks
-docs/       architecture notes -- see docs/current-arch.md and docs/claude.md
+docs/       architecture notes -- see docs/current-arch.md, docs/architectures-experimented.md, and docs/claude.md
 ```
 
-See **`docs/current-arch.md`** for a full architecture writeup (data schema, model internals, the YOLO integration and its currently-open tuning question, known hardware constraints) and **`docs/claude.md`** for working conventions if you're picking this project back up with Claude Code.
+See **`docs/current-arch.md`** for a full architecture writeup (data schema, model internals, the YOLO integration and its currently-open tuning question, known hardware constraints), **`docs/architectures-experimented.md`** for every modeling approach tried along the way (including ones trained but not currently used, and ones designed but never built), and **`docs/claude.md`** for working conventions if you're picking this project back up with Claude Code.
 
 ## Status
 

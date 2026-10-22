@@ -1,6 +1,6 @@
 # Working notes for Claude Code in this repo
 
-Read `docs/current-arch.md` first for what exists and why. This file is conventions and gotchas — things that aren't obvious from reading the code once, learned the hard way over this project's history.
+Read `docs/current-arch.md` first for what exists and why, and `docs/architectures-experimented.md` for why it's shaped this way — every modeling approach tried, including ones trained but not currently used, and ones designed but never built. This file is conventions and gotchas — things that aren't obvious from reading the code once, learned the hard way over this project's history.
 
 ## Running it
 
