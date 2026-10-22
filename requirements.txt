@@ -1,0 +1,25 @@
+# Core deps -- installable directly via: pip install -r requirements.txt
+fastapi==0.141.1
+uvicorn[standard]==0.52.4
+pydantic==2.13.5
+numpy==2.5.2
+pillow==12.3.0
+scipy==1.18.1
+scikit-image==0.26.0
+pypdfium2==5.13.0
+pytest==9.1.1
+ultralytics==8.4.143
+
+# torch is NOT installable from this file -- it needs the CUDA-specific
+# index for a GPU build on this machine (RTX 500 Ada, driver 596.08 /
+# CUDA 13.2, cu124 wheels are forward/backward compatible with it):
+#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+#   pip install torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu124
+# (installed versions: torch==2.6.0+cu124, torchvision==0.21.0+cu124)
+#
+# IMPORTANT: `pip install ultralytics` on its own pulls in the latest
+# torch/torchvision (CPU-only wheels, no CUDA) as a dependency and silently
+# downgrades/replaces the GPU build above -- if you ever reinstall
+# ultralytics or its deps, reinstall torch+torchvision from the CUDA index
+# again afterward (--force-reinstall --no-deps) and verify with
+# `python -c "import torch; print(torch.__version__, torch.cuda.is_available())"`.

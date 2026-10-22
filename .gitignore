@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.pytest_cache/
+
+# Source PDF -- large, and the repo only needs the rendered page images
+data/Yaajusha_Manthra_Rathnaakaram.PDF.pdf
+
+# Rendered page images: data/images/ holds every page rendered from the
+# source PDF (200+), but only the ones with a saved annotation in
+# data/annotations/ are worth versioning -- the rest are regenerable via
+# `python -m scripts.extract_page --page N --dpi 180` (or extract_all_pages.py
+# for all of them) and would otherwise bloat the repo for no reason.
+# Keep this allowlist in sync with data/annotations/*.json: regenerate the
+# two lines per page with
+#   for f in data/annotations/page_*.json; do p=$(basename "$f" .json); echo "!data/images/$p.png"; echo "!data/images/$p.meta.json"; done
+data/images/*
+!data/images/page_0002.png
+!data/images/page_0002.meta.json
+!data/images/page_0003.png
+!data/images/page_0003.meta.json
+!data/images/page_0004.png
+!data/images/page_0004.meta.json
+!data/images/page_0005.png
+!data/images/page_0005.meta.json
+!data/images/page_0006.png
+!data/images/page_0006.meta.json
+
+# Trained checkpoints and training-run scratch output -- large binaries,
+# regenerable via the Train boundaries/lines/YOLO buttons (or the model/train_*.py
+# CLIs) from data/annotations/ + the kept images above.
+model/checkpoints/*.pt
+model/checkpoints/_yolo_runs/
+model/checkpoints/_training_status/
+model/yolo_dataset/
+
+# Stray AMP-check download that ultralytics writes to the CWD during YOLO
+# training (not something this project produces intentionally).
+/weights/
+
+# Reference clone of ultralytics' YOLO26 discovery page -- not part of this
+# project and has its own .git, so it's excluded entirely rather than nested.
+/yolo26/
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
